@@ -1,93 +1,97 @@
 # Product Data Explorer
 
-A full-stack web application that scrapes and displays product data from World of Books, built with React, Next.js, and Express.js.
+A full-stack web application that scrapes and displays product data from **World of Books**, built with **React**, **Next.js**, and **Express.js**.
 
-## Features
+---
 
-- **Live Data Scraping**: Real-time scraping from World of Books website
-- **Hierarchical Navigation**: Browse from headings → categories → products → details
-- **Search Functionality**: Search across all products with pagination
-- **Responsive Design**: Mobile-first design with Tailwind CSS
-- **Error Handling**: Comprehensive error handling and retry logic
-- **Caching**: Intelligent caching system for improved performance
-- **Loading States**: Smooth loading indicators throughout the app
+## 🚀 Features
 
-## Tech Stack
+- **Live Data Scraping** – Real-time scraping from World of Books
+- **Hierarchical Navigation** – Browse from headings → categories → products → details
+- **Search Functionality** – Search across all products with pagination
+- **Responsive Design** – Mobile-first design with Tailwind CSS
+- **Error Handling** – Comprehensive error handling and retry logic
+- **Caching** – Intelligent caching system for performance optimization
+- **Loading States** – Smooth loading indicators throughout the app
+
+---
+
+## 🛠 Tech Stack
 
 ### Frontend
-- **Next.js 14** with App Router
-- **React 18** with TypeScript
+- **Next.js 14** (App Router)
+- **React 18** with **TypeScript**
 - **Tailwind CSS** for styling
-- **Shadcn/ui** component library
-- **Lucide React** for icons
+- **shadcn/ui** component library
+- **lucide-react** for icons
 
 ### Backend
-- **Node.js** with Express.js
+- **Node.js** with **Express.js**
 - **Cheerio** for HTML parsing
 - **Axios** for HTTP requests
 - **Custom caching** system
 
-## Project Structure
+---
 
-\`\`\`
+## 📂 Project Structure
+
+```bash
 product-data-explorer/
 ├── app/                          # Next.js app directory
 │   ├── categories/[heading]/     # Category pages
 │   ├── products/[category]/      # Product listing pages
-│   ├── product/[id]/            # Product detail pages
-│   ├── search/                  # Search results page
-│   └── page.tsx                 # Homepage
+│   ├── product/[id]/             # Product detail pages
+│   ├── search/                   # Search results page
+│   └── page.tsx                  # Homepage
 ├── components/                   # Reusable React components
-│   ├── ui/                      # Shadcn/ui components
+│   ├── ui/                       # shadcn/ui components
 │   ├── navigation-breadcrumb.tsx
 │   ├── search-header.tsx
 │   ├── product-card.tsx
 │   └── error-boundary.tsx
-├── lib/                         # Utility libraries
-│   ├── utils.ts                 # General utilities
-│   └── api.ts                   # API client
-└── server/                      # Backend Express server
-    ├── middleware/              # Express middleware
-    ├── utils/                   # Server utilities
-    └── index.js                 # Main server file
-\`\`\`
+├── lib/                          # Utility libraries
+│   ├── utils.ts                  # General utilities
+│   └── api.ts                    # API client
+└── server/                       # Backend (Express server)
+    ├── middleware/               # Express middleware
+    ├── utils/                    # Server utilities
+    └── index.js                  # Main server file
 
+```
 ## Installation & Setup
 
 ### Prerequisites
 - Node.js 18+ 
 - npm or yarn
-
 ### Backend Setup
-
 1. Navigate to the server directory:
-\`\`\`bash
+```bash
 cd server
-\`\`\`
+```
 
 2. Install dependencies:
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
 3. Start the development server:
-\`\`\`bash
+```bash
 npm run dev
-\`\`\`
+```
 
 The backend will run on `http://localhost:5000`
 
 ### Frontend Setup
 
 1. Navigate to the root directory and install dependencies:
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
 2. Start the development server:
-\`\`\`bash
+```bash
 npm run dev
-\`\`\`
+```
 
 The frontend will run on `http://localhost:3000`
 
@@ -133,35 +137,35 @@ The frontend will run on `http://localhost:3000`
 ### Running in Development Mode
 
 1. Start the backend server:
-\`\`\`bash
+```bash
 cd server && npm run dev
-\`\`\`
+```
 
 2. Start the frontend (in a new terminal):
-\`\`\`bash
+```bash
 npm run dev
-\`\`\`
+```
 
 ### Environment Variables
 
 Create a `.env.local` file in the root directory:
 
-\`\`\`env
+```env
 NEXT_PUBLIC_API_URL=http://localhost:5000/api
 NODE_ENV=development
-\`\`\`
+```
 
 ### Building for Production
 
 1. Build the frontend:
-\`\`\`bash
+```bash
 npm run build
-\`\`\`
+```
 
 2. Start the production server:
-\`\`\`bash
+```bash
 npm start
-\`\`\`
+```
 
 ## Deployment
 
