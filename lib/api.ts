@@ -1,7 +1,5 @@
-// const API_BASE_URL = process.env.NODE_ENV === 'production' 
-//   ? "https://product-data-explorer.onrender.com/api"
-//   : (process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api")
-const API_BASE_URL = "https://product-data-explorer.onrender.com/api"
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://product-data-explorer.onrender.com/api"
+
 interface ApiError extends Error {
   status?: number
   code?: string
