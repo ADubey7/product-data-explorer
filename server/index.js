@@ -10,8 +10,20 @@ const scraper = require("./utils/scraper")
 const app = express()
 const PORT = process.env.PORT || 5000
 
+// CORS Configuration
+const corsOptions = {
+  origin: [
+    'http://localhost:3000', // for local development
+    'https://product-data-explorer-nu.vercel.app' // your Vercel domain
+  ],
+  credentials: true, // if you're using cookies/sessions
+  optionsSuccessStatus: 200, // for legacy browser support
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}
+
 // Middleware
-app.use(cors())
+app.use(cors(corsOptions))
 app.use(express.json())
 
 app.use((req, res, next) => {
@@ -536,4 +548,5 @@ app.use(errorHandler)
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
   console.log(`Health check: http://localhost:${PORT}/api/health`)
+  console.log(`CORS enabled for: ${corsOptions.origin.join(', ')}`)
 })
