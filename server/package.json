@@ -1,0 +1,22 @@
+{
+  "name": "product-data-explorer-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Product Data Explorer that scrapes World of Books",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "cheerio": "^1.0.0-rc.12",
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": ["web-scraping", "express", "api", "books"],
+  "author": "Product Data Explorer",
+  "license": "MIT"
+}
