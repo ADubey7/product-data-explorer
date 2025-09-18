@@ -1,5 +1,10 @@
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api"
 
+// Add these debug lines temporarily
+console.log('Environment:', process.env.NODE_ENV)
+console.log('NEXT_PUBLIC_API_URL:', process.env.NEXT_PUBLIC_API_URL)
+console.log('Final API_BASE_URL:', API_BASE_URL)
+
 interface ApiError extends Error {
   status?: number
   code?: string
