@@ -1,5 +1,5 @@
 const API_BASE_URL = process.env.NODE_ENV === 'production' 
-  ? "https://product-data-explorer.onrender.com/api"
+  ? "https://product-data-explorer.onrender.com"
   : process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api"
 
 console.log("[v0] API_BASE_URL:", API_BASE_URL)
