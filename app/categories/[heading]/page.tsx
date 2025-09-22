@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Search, BookOpen, ArrowRight, ArrowLeft, Loader2 } from "lucide-react"
 import Link from "next/link"
+import { api } from "@/lib/api"
 
 interface Category {
   id: string
@@ -35,9 +36,7 @@ export default function CategoriesPage() {
   const fetchCategories = async () => {
     try {
       setLoading(true)
-      const response = await fetch(`http://localhost:5000/api/categories/${heading}`)
-      if (!response.ok) throw new Error("Failed to fetch categories")
-      const data = await response.json()
+      const data = await api.getCategories(heading)
       setCategories(data)
     } catch (err) {
       setError(err instanceof Error ? err.message : "An error occurred")
