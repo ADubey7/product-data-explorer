@@ -10,6 +10,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { SearchHeader } from "@/components/search-header"
 import { NavigationBreadcrumb } from "@/components/navigation-breadcrumb"
+import { api } from "@/lib/api"
 
 interface ProductDetail {
   id: string
@@ -44,10 +45,7 @@ export default function ProductDetailPage() {
   const fetchProductDetail = async () => {
     try {
       setLoading(true)
-      const apiUrl = `http://localhost:5000/api/product/${id}${url ? `?url=${encodeURIComponent(url)}` : ""}`
-      const response = await fetch(apiUrl)
-      if (!response.ok) throw new Error("Failed to fetch product details")
-      const data = await response.json()
+      const data = await api.getProduct(id, url || undefined)
       setProduct(data)
     } catch (err) {
       setError(err instanceof Error ? err.message : "An error occurred")
