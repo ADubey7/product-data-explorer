@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Search, BookOpen, ArrowRight, Loader2 } from "lucide-react"
 import Link from "next/link"
-import './test-api.js'
+
 interface Heading {
   id: string
   name: string
