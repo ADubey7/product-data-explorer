@@ -13,9 +13,9 @@ const PORT = process.env.PORT || 5000
 // CORS Configuration
 const corsOptions = {
   origin: [
-    'http://localhost:3000', // for local development
-    'product-data-explorer-psi.vercel.app' // your Vercel domain
-  ],
+  'http://localhost:3000', 
+  'https://product-data-explorer-psi.vercel.app' 
+],
   credentials: true, // if you're using cookies/sessions
   optionsSuccessStatus: 200, // for legacy browser support
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
