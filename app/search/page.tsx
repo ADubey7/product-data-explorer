@@ -13,6 +13,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { SearchHeader } from "@/components/search-header"
 import { NavigationBreadcrumb } from "@/components/navigation-breadcrumb"
+import { api } from "@/lib/api"
 
 interface SearchResult {
   id: string
@@ -44,11 +45,7 @@ export default function SearchPage() {
   const performSearch = async (searchTerm: string, pageNum: number) => {
     try {
       setLoading(true)
-      const response = await fetch(
-        `http://localhost:5000/api/search?q=${encodeURIComponent(searchTerm)}&page=${pageNum}`,
-      )
-      if (!response.ok) throw new Error("Failed to perform search")
-      const data = await response.json()
+      const data = await api.search(searchTerm, pageNum)
 
       if (pageNum === 1) {
         setResults(data)

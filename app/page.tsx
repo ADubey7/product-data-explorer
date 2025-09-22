@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Search, BookOpen, ArrowRight, Loader2 } from "lucide-react"
 import Link from "next/link"
+import { api } from "@/lib/api"
 
 interface Heading {
   id: string
@@ -28,9 +29,7 @@ export default function HomePage() {
   const fetchHeadings = async () => {
     try {
       setLoading(true)
-      const response = await fetch("http://localhost:5000/api/headings")
-      if (!response.ok) throw new Error("Failed to fetch headings")
-      const data = await response.json()
+      const data = await api.getHeadings()
       setHeadings(data)
     } catch (err) {
       setError(err instanceof Error ? err.message : "An error occurred")
