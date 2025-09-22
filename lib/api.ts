@@ -1,8 +1,7 @@
+
 const API_BASE_URL = "https://product-data-explorer.onrender.com/api"
 
-console.log("[v0] API_BASE_URL:", API_BASE_URL)
-console.log("[v0] NODE_ENV:", process.env.NODE_ENV)
-console.log("[v0] NEXT_PUBLIC_API_URL:", process.env.NEXT_PUBLIC_API_URL)
+console.log("[v0] FORCED API_BASE_URL:", API_BASE_URL)
 
 interface ApiError extends Error {
   status?: number
